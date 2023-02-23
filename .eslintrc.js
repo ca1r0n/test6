@@ -25,7 +25,7 @@ module.exports = {
         // Tells eslint how to resolve imports
         'import/resolver': {
             typescript: {
-                "alwaysTryTypes": true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
+                alwaysTryTypes: true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
             },
             node: {
                 paths: ['src'],
@@ -154,6 +154,7 @@ module.exports = {
 
         'react/prop-types': 0,
         'prettier/prettier': 'error',
+        'jsx-a11y/no-static-element-interactions': 'off',
     },
-    ignorePatterns: ['node_modules', 'build', "*.config.js"],
+    ignorePatterns: ['node_modules', 'build', '*.config.js'],
 };

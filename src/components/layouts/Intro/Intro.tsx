@@ -50,7 +50,7 @@ export interface IntroProps {
 
 export function Intro(props: IntroProps) {
     const [activeSlide, setActiveSlide] = useState(0);
-    const refRightArrow = useRef<HTMLDivElement | null>(null);
+    const refRightArrow = useRef<HTMLButtonElement | null>(null);
 
     const reloadAnimation = useCallback(() => {
         const current = refRightArrow.current;
@@ -92,16 +92,16 @@ export function Intro(props: IntroProps) {
                     </div>
                 </div>
                 <div className={styles.arrows}>
-                    <div className={styles.arrows__left} onClick={onPrev}>
+                    <button className={styles.arrows__left} onClick={onPrev}>
                         <svg width='7' height='10' viewBox='0 0 7 10' fill='none' xmlns='http://www.w3.org/2000/svg'>
                             <path d='M5.5 1L1.5 5L5.5 9' stroke='white' strokeWidth='2' />
                         </svg>
-                    </div>
-                    <div ref={refRightArrow} className={styles.arrows__right} onClick={onNext}>
+                    </button>
+                    <button ref={refRightArrow} className={styles.arrows__right} onClick={onNext}>
                         <svg width='11' height='18' viewBox='0 0 11 18' fill='none' xmlns='http://www.w3.org/2000/svg'>
                             <path d='M1 1L9 9L1 17' stroke='white' strokeWidth='2' />
                         </svg>
-                    </div>
+                    </button>
                 </div>
 
                 <Dots activeSlide={activeSlide} length={slides.length} />
@@ -122,6 +122,7 @@ function Dots(props: DotsProps) {
             {new Array(props.length).fill(null).map((_, index) => {
                 return (
                     <div
+                        key={index}
                         className={classNames(styles.dots__item, index === props.activeSlide ? styles.active : '')}
                     ></div>
                 );

@@ -12,7 +12,10 @@ export interface ProposalProps {
 export function Proposal(props: ProposalProps) {
     return (
         <div>
-            <div onClick={props.onClose} className={classNames(styles.bg, props.isActive ? styles.bg__active : '')} />
+            <button
+                onClick={props.onClose}
+                className={classNames(styles.bg, props.isActive ? styles.bg__active : '')}
+            />
             <div className={classNames(styles.block, props.isActive ? styles.block__active : '')}>
                 <div className={styles.content}>
                     <h2 className={styles.title}>Онлайн-заявка</h2>
@@ -26,7 +29,7 @@ export function Proposal(props: ProposalProps) {
                     <div className={styles.send}>
                         <p className={styles.send__text}>
                             Нажимая на кнопку «Оставить заявку», я даю согласие{' '}
-                            <a href='#' target={'_blank'}>
+                            <a href='/' target={'_blank'}>
                                 на обработку персональных данных
                             </a>
                         </p>

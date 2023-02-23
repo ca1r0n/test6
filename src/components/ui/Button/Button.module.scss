@@ -1,56 +1,56 @@
 .button {
-  padding: 0.75rem 1.5rem;
-  border-radius: 40px;
-  font-weight: 700;
-  transition: all 0.15s;
-  font-size: 1rem;
-  line-height: 1.5;
-  border: 1px solid transparent;
+    padding: 0.75rem 1.5rem;
+    border-radius: 40px;
+    font-weight: 700;
+    transition: all 0.15s;
+    font-size: 1rem;
+    line-height: 1.5;
+    border: 1px solid transparent;
 
-  &:disabled {
-    opacity: 0.4;
-  }
+    &:disabled {
+        opacity: 0.4;
+    }
 }
 
 .contained {
-  background: #FF9514;
-  color: #ffffff;
+    background: #ff9514;
+    color: #ffffff;
 
-  &:hover {
-    background: #111111;
-  }
+    &:hover {
+        background: #111111;
+    }
 
-  &:active {
-    background: #575757;
-  }
+    &:active {
+        background: #575757;
+    }
 }
 
 .outlined {
-  background: #ffffff;
-  color: #FF9514;
-  border-color: #FF9514;
+    background: #ffffff;
+    color: #ff9514;
+    border-color: #ff9514;
 
-  &:hover {
-    background: #FF9514;
-    color: #ffffff;
-  }
+    &:hover {
+        background: #ff9514;
+        color: #ffffff;
+    }
 
-  &:active {
-    border-color: #FFA83D;
-    background: #FFA83D;
-  }
+    &:active {
+        border-color: #ffa83d;
+        background: #ffa83d;
+    }
 }
 
 .gray {
-  background: #F3F3F4;
-  color: #111111;
+    background: #f3f3f4;
+    color: #111111;
 
-  &:hover {
-    background: #111111;
-    color: #ffffff;
-  }
+    &:hover {
+        background: #111111;
+        color: #ffffff;
+    }
 
-  &:active {
-    background: #575757;
-  }
+    &:active {
+        background: #575757;
+    }
 }

@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
+    "build": "next build",
     "eslint": "eslint ./src",
     "prettier": "prettier ./src --write"
   },

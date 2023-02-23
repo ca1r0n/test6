@@ -31,7 +31,7 @@ export function Header(props: HeaderProps) {
     }, [props.onSend]);
 
     useEffect(() => {
-        window.addEventListener('scroll', (e) => {
+        window.addEventListener('scroll', () => {
             console.log(window.pageYOffset);
             if (window.pageYOffset > 200) {
                 setIsOnTop(false);
@@ -48,12 +48,12 @@ export function Header(props: HeaderProps) {
                 <div className={styles.divide} />
                 <p className={styles.description}>лизинговая компания</p>
             </div>
-            <div className={classNames(styles.burger, isOnTop ? styles.burger__top : '')} onClick={onOpen}>
+            <button className={classNames(styles.burger, isOnTop ? styles.burger__top : '')} onClick={onOpen}>
                 <div className={styles.burger__item}></div>
                 <div className={styles.burger__item}></div>
                 <div className={classNames(styles.burger__item, styles.burger__item__short)}></div>
-            </div>
-            <div
+            </button>
+            <button
                 className={classNames(styles.burger__bg, isActive ? styles.burger__bg__active : '')}
                 onClick={onClose}
             />

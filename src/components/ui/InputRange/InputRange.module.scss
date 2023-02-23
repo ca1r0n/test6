@@ -1,84 +1,84 @@
 .wrapper {
-  position: relative;
-  display: block;
+    position: relative;
+    display: block;
 }
 
 .input {
-  background: #F3F3F4;
-  border-radius: 1rem;
-  padding: 1rem 1.5rem;
-  width: 100%;
-  font-family: Nekst, sans-serif;
-  font-size: 30px;
-  font-weight: 900;
-  line-height: 36px;
-  color: #575757;
-  outline: none;
+    background: #f3f3f4;
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    font-family: Nekst, sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 36px;
+    color: #575757;
+    outline: none;
 
-  @media (max-width: 768px) {
-    font-size: 22px;
-    line-height: 20px;
-  }
+    @media (max-width: 768px) {
+        font-size: 22px;
+        line-height: 20px;
+    }
 
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
 }
 
 .range {
-  position: absolute;
-  z-index: 2;
-  bottom: 0;
-  left: 1.5rem;
-  right: 1.5rem;
-  transform: translate(0, 50%);
-
-  height: 2px;
-  border-radius: 5px;
-  background: transparent;
-  outline: none;
-  transition: 0.3s;
-  appearance: none;
-
-  &::-webkit-slider-thumb {
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #FF9514;
-    cursor: pointer;
-  }
-
-  &__block {
-    overflow: hidden;
     position: absolute;
     z-index: 2;
     bottom: 0;
     left: 1.5rem;
     right: 1.5rem;
-  }
+    transform: translate(0, 50%);
 
-  &__range {
-    background: #FF9514;;
     height: 2px;
-  }
+    border-radius: 5px;
+    background: transparent;
+    outline: none;
+    transition: 0.3s;
+    appearance: none;
+
+    &::-webkit-slider-thumb {
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #ff9514;
+        cursor: pointer;
+    }
+
+    &__block {
+        overflow: hidden;
+        position: absolute;
+        z-index: 2;
+        bottom: 0;
+        left: 1.5rem;
+        right: 1.5rem;
+    }
+
+    &__range {
+        background: #ff9514;
+        height: 2px;
+    }
 }
 
 .right {
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translate(0, -50%);
-  font-family: Nekst, sans-serif;
-  font-size: 30px;
-  font-weight: 900;
-  line-height: 36px;
-  color: #575757;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-family: Nekst, sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 36px;
+    color: #575757;
 
-  @media (max-width: 768px) {
-    font-size: 22px;
-    line-height: 20px;
-  }
+    @media (max-width: 768px) {
+        font-size: 22px;
+        line-height: 20px;
+    }
 }
