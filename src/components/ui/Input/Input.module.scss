@@ -1,0 +1,57 @@
+.wrapper {
+  padding: 0.5rem 1.5rem;
+  background: #F3F3F4;
+  transition: background 0.2s;
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  cursor: text;
+
+  &:hover {
+    background: #EAEAEB;
+  }
+
+  &:active, &:focus-within {
+    background: #ffffff;
+    border-color: #FF9514;
+    outline: 4px solid rgba(#FF9514, 0.2);
+  }
+
+  &__left {
+    position: relative;
+  }
+}
+
+.input {
+  outline: none;
+  background: transparent;
+  color: #575757;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 0.75rem;
+
+
+  &:focus-visible {
+  }
+
+  & + div {
+    font-size: 1rem;
+    color: #575757;
+    font-weight: 700;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    transition: all 0.2s;
+
+    > span {
+      color: rgba(#575757, 0.5);
+    }
+  }
+
+  &:focus-within + div, &:not([value=""]) + div {
+    font-size: 0.75rem;
+    top: 0.5rem;
+    left: 0;
+    font-weight: 400;
+  }
+}

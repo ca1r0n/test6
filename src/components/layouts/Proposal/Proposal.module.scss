@@ -1,0 +1,147 @@
+.block {
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translate(0, 100%);
+  transition: all 0.2s;
+  height: 80%;
+  background: #ffffff;
+  border-radius: 32px 32px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__active {
+    transform: translate(0, 0);
+  }
+}
+
+.bg {
+  pointer-events: none;
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: #111111;
+  opacity: 0;
+  transition: all 0.2s;
+
+  &__active {
+    pointer-events: auto;
+    opacity: 0.5;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.title {
+  font-family: 'Nekst', sans-serif;
+  font-weight: 900;
+  font-size: 3.5rem;
+  line-height: 0.9;
+  color: #111111;
+  
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 1.5rem;
+  max-width: 466px;
+  color: #575757;
+
+  @media (max-width: 768px) {
+    font-size: 0.875rem;
+    margin-top: 1rem;
+  }
+}
+
+.inputs {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+
+  &__item {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 2rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  &__item {
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #E7E7E7;
+    border-radius: 50%;
+    transition: all 0.2s;
+
+    &:hover {
+      background: rgba(#E7E7E7, 0.7);
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 1.5rem;
+  }
+}
+
+.send {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  gap: 1rem;
+  border: 2px solid #F3F3F4;
+  border-radius: 1rem;
+
+  @media (max-width: 768px) {
+    margin-top: 0.5rem;
+    text-align: center;
+    border: none;
+    flex-direction: column-reverse;
+    padding: 0;
+  }
+
+  &__text {
+    max-width: 330px;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(#11111180, 0.5);
+  }
+
+  &__btn {
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+}

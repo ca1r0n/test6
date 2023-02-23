@@ -1,0 +1,210 @@
+.wrapper {
+  margin-top: 90px;
+  padding: 0 50px;
+
+  @media (max-width: 768px) {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.content {
+  position: relative;
+  background: #000;
+  height: 470px;
+  border-radius: 2rem;
+  color: #fff;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    border-radius: 0 0 2rem 2rem;
+  }
+
+  @media (max-width: 768px) {
+    height: 550px;
+  }
+}
+
+.left {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 70px;
+  max-width: 670px;
+  height: 100%;
+
+  @media (max-width: 1024px) {
+    justify-content: flex-end;
+    max-width: none;
+    padding: 70px 44px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 70px 22px;
+  }
+}
+
+.title {
+  font-family: Nekst, sans-serif;
+  font-size: 54px;
+  font-weight: 900;
+  line-height: 49px;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+    line-height: 28.8px;
+  }
+}
+
+.description {
+  font-family: Nekst, sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 36px;
+  margin-top: 2rem;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.button {
+  margin-top: 2rem;
+}
+
+.image {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  bottom: 0;
+  right: 0;
+  user-select: none;
+
+  @media (max-width: 1024px) {
+    transform: translate(-50%);
+  }
+
+  @media (max-width: 768px) {
+    top: 50%;
+    transform: translate(-50%, -75%);
+  }
+}
+
+.dots {
+  height: 12px;
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  gap: 1.125rem;
+  align-items: center;
+
+  @media (max-width: 1024px) {
+    bottom: 1.5rem;
+  }
+
+  &__item {
+    width: 6px;
+    height: 6px;
+    background: #FFFFFF;
+    opacity: 0.4;
+    transition: all 0.2s;
+    border-radius: 50%;
+
+    &.active {
+      width: 12px;
+      height: 12px;
+      opacity: 1;
+    }
+  }
+}
+
+.arrows {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+
+  &__left {
+    cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+    filter: drop-shadow(0px 10px 30px rgba(88, 88, 88, 0.3));
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    rotate: 180deg;
+    opacity: 0.4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__right {
+    position: relative;
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid rgba(#FFFFFF, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__animation {
+      &::after {
+        content: "";
+        display: block;
+        animation: dot-animate 10s linear reverse;
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        width: 3rem;
+        height: 3rem;
+        border: 2px solid #FFFFFF;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+@keyframes dot-animate {
+  0% {
+    border: 3px solid #FFFFFF;
+    clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 100%, 0% 0%, 50% 0%, 50% 50%, 50% 50%);
+  }
+  12.5% {
+    clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%, 0 100%, 0 0, 0 0, 50% 50%, 50% 50%);
+  }
+  25% {
+    clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%, 0 100%, 0 50%, 0 50%, 50% 50%, 50% 50%);
+  }
+  37.5% {
+    clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%, 0 100%, 0 100%, 0 100%, 50% 50%, 50% 50%);
+  }
+  50% {
+    clip-path: polygon(50% 0%, 100% 0, 100% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 50%, 50% 50%);
+  }
+  62.5% {
+    clip-path: polygon(50% 0%, 100% 0, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 50% 50%, 50% 50%);
+  }
+  75% {
+    clip-path: polygon(50% 0%, 100% 0, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 50% 50%, 50% 50%);
+  }
+  87.5% {
+    clip-path: polygon(50% 0%, 100% 0, 100% 0, 100% 0, 100% 0, 100% 0, 100% 0, 50% 50%, 50% 50%);
+  }
+  100% {
+    border: 3px solid #FFFFFF;
+    clip-path: polygon(50% 0%, 50% 0, 50% 0, 50% 0, 50% 0, 50% 0, 50% 0, 50% 50%, 50% 50%);
+  }
+}
