@@ -28,7 +28,7 @@ export function InputRange(props: InputRangeProps) {
                 onChange={onChange}
                 type='number'
                 value={props.value}
-            />
+            ></input>
             <Range from={props.from} to={props.to} value={props.value} />
             <input
                 min={props.from}
@@ -37,7 +37,7 @@ export function InputRange(props: InputRangeProps) {
                 value={props.value}
                 onChange={onChange}
                 type='range'
-            />
+            ></input>
             {props.rightItem && <div className={styles.right}>{props.rightItem}</div>}
         </label>
     );
