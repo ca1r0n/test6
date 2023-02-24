@@ -1,5 +1,8 @@
 const path = require('path');
 
 module.exports = {
-    basePath: '/test6',
+    baseURL: '/test6',
+    images: {
+        unoptimized: true,
+    },
 };
