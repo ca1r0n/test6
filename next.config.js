@@ -8,7 +8,6 @@ module.exports = {
     serverRuntimeConfig: {
         PROJECT_ROOT: path.join(__dirname, 'src'),
     },
-    experimental: {
-        images: undefined,
-    },
+    // Potential new config flag:
+    disableExperimentalFeaturesWarning: true
 };
