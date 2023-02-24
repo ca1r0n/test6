@@ -4,7 +4,7 @@ module.exports = {
     basePath: '/test6',
     exportPathMap: async function (defaultPathMap, { dev, dir, outDir, distDir, buildId }) {
         return {
-            '/': { page: '/' },
+            '/test6': { page: '/test6' },
         };
     },
     images: {
