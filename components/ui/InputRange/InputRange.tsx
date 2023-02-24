@@ -11,13 +11,22 @@ export interface InputRangeProps {
 }
 
 export function InputRange(props: InputRangeProps) {
-    const onChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-        const value = Number(e.target.value);
+    const onChange = useCallback(
+        (e: ChangeEvent<HTMLInputElement>) => {
+            const value = Number(e.target.value);
 
-        if (props.onChange) {
-            props.onChange(value);
-        }
-    }, []);
+            if (props.onChange) {
+                if (value > props.to) {
+                    props.onChange(props.to);
+                } else if (value < props.from) {
+                    props.onChange(props.from);
+                } else {
+                    props.onChange(value);
+                }
+            }
+        },
+        [props.to, props.from],
+    );
 
     return (
         <label className={styles.wrapper}>

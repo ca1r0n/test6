@@ -32,7 +32,6 @@ export function Header(props: HeaderProps) {
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
-            console.log(window.pageYOffset);
             if (window.pageYOffset > 200) {
                 setIsOnTop(false);
             } else {
