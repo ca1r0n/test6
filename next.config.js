@@ -1,16 +1,14 @@
 const path = require('path');
 
-/**
- * @type {import('next').NextConfig}
- */
 module.exports = {
     basePath: '/test6',
-    serverRuntimeConfig: {
-        PROJECT_ROOT: path.join(__dirname, 'src'),
+    exportPathMap: async function (defaultPathMap, { dev, dir, outDir, distDir, buildId }) {
+        return {
+            '/': { page: '/' },
+        };
     },
-    experimental: {
-        images: {
-            allowFutureImage: true,
-        },
+    images: {
+        loader: 'akamai',
+        path: '/test6',
     },
 };
