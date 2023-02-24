@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "eslint": "eslint ./src",
-    "prettier": "prettier ./src --write"
+    "eslint": "eslint ",
+    "prettier": "prettier . --write"
   },
   "engines": {
     "node": ">=14"

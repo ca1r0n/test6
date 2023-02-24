@@ -44,7 +44,13 @@ export function Header(props: HeaderProps) {
     return (
         <header className={classNames(styles.header, isOnTop ? styles.header__top : '')}>
             <div className={styles.left}>
-                <Image className={styles.logo} width={200} height={35} src={'/images/logotype.png'} alt={'logotype'} />
+                <Image
+                    className={styles.logo}
+                    width={200}
+                    height={35}
+                    src={'/test6/images/logotype.png'}
+                    alt={'logotype'}
+                />
                 <div className={styles.divide} />
                 <p className={styles.description}>лизинговая компания</p>
             </div>

@@ -13,32 +13,32 @@ interface SlideItem {
 
 const slides: SlideItem[] = [
     {
-        image: '/images/slide1.jpg',
+        image: '/test6/images/slide1.jpg',
         title: 'Авто в лизинг для физических лиц ',
         description: 'Получите машину за 5 дней',
     },
     {
-        image: '/images/slide2.jpg',
+        image: '/test6/images/slide2.jpg',
         title: 'Авто в лизинг для физических лиц 1',
         description: 'Получите машину за 5 дней 1',
     },
     {
-        image: '/images/slide3.jpg',
+        image: '/test6/images/slide3.jpg',
         title: 'Авто в лизинг для физических лиц 2',
         description: 'Получите машину за 5 дней 2',
     },
     {
-        image: '/images/slide1.jpg',
+        image: '/test6/images/slide1.jpg',
         title: 'Авто в лизинг для физических лиц ',
         description: 'Получите машину за 5 дней 3',
     },
     {
-        image: '/images/slide2.jpg',
+        image: '/test6/images/slide2.jpg',
         title: 'Авто в лизинг для физических лиц 1',
         description: 'Получите машину за 5 дней 4',
     },
     {
-        image: '/images/slide3.jpg',
+        image: '/test6/images/slide3.jpg',
         title: 'Авто в лизинг для физических лиц 2',
         description: 'Получите машину за 5 дней 5',
     },
