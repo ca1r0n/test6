@@ -9,6 +9,6 @@ module.exports = {
         PROJECT_ROOT: path.join(__dirname, 'src'),
     },
     experimental: {
-
+        images: undefined,
     },
 };
