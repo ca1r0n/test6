@@ -8,4 +8,7 @@ module.exports = {
     serverRuntimeConfig: {
         PROJECT_ROOT: path.join(__dirname, 'src'),
     },
+    experimental: {
+
+    },
 };
