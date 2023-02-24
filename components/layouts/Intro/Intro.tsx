@@ -13,32 +13,32 @@ interface SlideItem {
 
 const slides: SlideItem[] = [
     {
-        image: '/test6/images/slide1.jpg',
+        image: '/images/slide1.jpg',
         title: 'Авто в лизинг для физических лиц ',
         description: 'Получите машину за 5 дней',
     },
     {
-        image: '/test6/images/slide2.jpg',
+        image: '/images/slide2.jpg',
         title: 'Авто в лизинг для физических лиц 1',
         description: 'Получите машину за 5 дней 1',
     },
     {
-        image: '/test6/images/slide3.jpg',
+        image: '/images/slide3.jpg',
         title: 'Авто в лизинг для физических лиц 2',
         description: 'Получите машину за 5 дней 2',
     },
     {
-        image: '/test6/images/slide1.jpg',
+        image: '/images/slide1.jpg',
         title: 'Авто в лизинг для физических лиц ',
         description: 'Получите машину за 5 дней 3',
     },
     {
-        image: '/test6/images/slide2.jpg',
+        image: '/images/slide2.jpg',
         title: 'Авто в лизинг для физических лиц 1',
         description: 'Получите машину за 5 дней 4',
     },
     {
-        image: '/test6/images/slide3.jpg',
+        image: '/images/slide3.jpg',
         title: 'Авто в лизинг для физических лиц 2',
         description: 'Получите машину за 5 дней 5',
     },
@@ -50,22 +50,32 @@ export interface IntroProps {
 
 export function Intro(props: IntroProps) {
     const [activeSlide, setActiveSlide] = useState(0);
+    const [isVisible, setIsVisible] = useState(true);
     const refRightArrow = useRef<HTMLButtonElement | null>(null);
 
+    const changeSlide = useCallback((f: (prev: number) => number) => {
+        setIsVisible(false);
+        setTimeout(() => {
+            setActiveSlide(f);
+            setIsVisible(true);
+        }, 200);
+    }, []);
+
+    //  reaload arrow animation
     const reloadAnimation = useCallback(() => {
         const current = refRightArrow.current;
         if (current) {
             current.classList.remove(styles.arrows__right__animation);
             setTimeout(() => {
                 current.classList.add(styles.arrows__right__animation);
-            }, 10);
+            }, 15);
         }
     }, [refRightArrow]);
 
     useEffect(() => {
         reloadAnimation();
         const timeout = setTimeout(() => {
-            setActiveSlide((prev) => (prev + 1 === slides.length ? 0 : prev + 1));
+            changeSlide((prev) => (prev + 1 === slides.length ? 0 : prev + 1));
         }, 10000);
 
         return () => {
@@ -74,19 +84,23 @@ export function Intro(props: IntroProps) {
     }, [activeSlide]);
 
     const onNext = useCallback(() => {
-        setActiveSlide((prev) => (prev + 1 === slides.length ? 0 : prev + 1));
+        changeSlide((prev) => (prev + 1 === slides.length ? 0 : prev + 1));
     }, []);
 
     const onPrev = useCallback(() => {
-        setActiveSlide((prev) => (prev - 1 === -1 ? slides.length - 1 : prev - 1));
+        changeSlide((prev) => (prev - 1 === -1 ? slides.length - 1 : prev - 1));
     }, []);
 
     return (
         <div className={styles.wrapper}>
             <div className={styles.content}>
                 <div className={styles.left}>
-                    <h1 className={styles.title}>{slides[activeSlide].title}</h1>
-                    <h2 className={styles.description}>{slides[activeSlide].description}</h2>
+                    <h1 className={classNames(styles.title, isVisible ? styles.fadein : styles.fadeout)}>
+                        {slides[activeSlide].title}
+                    </h1>
+                    <h2 className={classNames(styles.description, isVisible ? styles.fadein : styles.fadeout)}>
+                        {slides[activeSlide].description}
+                    </h2>
                     <div className={styles.button}>
                         <Button onClick={props.onSend}>Оставить заявку</Button>
                     </div>
@@ -105,7 +119,13 @@ export function Intro(props: IntroProps) {
                 </div>
 
                 <Dots activeSlide={activeSlide} length={slides.length} />
-                <Image className={styles.image} width={675} height={379} src={slides[activeSlide].image} alt={'bg'} />
+                <Image
+                    className={classNames(styles.image, isVisible ? styles.fadein : styles.fadeout)}
+                    width={675}
+                    height={379}
+                    src={slides[activeSlide].image}
+                    alt={'bg'}
+                />
             </div>
         </div>
     );
